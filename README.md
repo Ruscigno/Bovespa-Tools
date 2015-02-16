@@ -11,6 +11,7 @@ The fact is that the number of small American investors, that is the householder
 The main difficulty of the Brazilian investor faces is the difficulty of finding a reliable database with all current assets of [BM&F Bovespa](http://www.bmfbovespa.com.br/), that is, it is not easy to find a quality database, updated and free. You can argue that [Yahoo Finance](http://finance.yahoo.com/) or [Google Finance](https://www.google.com/finance) offer this option. Yes, both Yahoo and Google do offer good tools for decision making, however, try to compare the two databases, take an symbol and compare its price history between the two databases, you will notice a variation in prices, sometimes a huge one. Then you could wonder why there is this difference!?
 > 1. Stock Split and Merge
 > 2. Stock Dividends
+
 However the biggest problem is how to have a reliable database that you can use in technical analysis programs such as [MetaStock](http://www.metastock.com/) ou o [Metatrader](http://www.metatrader5.com/), this is where things start to get worse, because an free updated database with more than 5 years of history is not easy to find and this will negatively impact your decision making.
 
 ##Goals
