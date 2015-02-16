@@ -14,6 +14,8 @@ The main difficulty of the Brazilian investor faces is the difficulty of finding
 
 So the biggest problem is how to have a reliable database that you can use in technical analysis programs such as [MetaStock](http://www.metastock.com/) or [Metatrader](http://www.metatrader5.com/)? This is where things start to get worse. As I said, a free and updated database with more than 5 years of history is not easy to find so this will negatively impact your decision making.
 
+And this is where this project idea born.
+
 ##Goals
 
 1. Provide a free and reliable Bovespa's database for the Bovespa's small investor, that is, provide a tool that will allows you to create this database according to your needs.
