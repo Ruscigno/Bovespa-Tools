@@ -1,20 +1,21 @@
-# Bovespa Tools
-Ferramentas para pequenos investidores da [BM&F Bovespa](http://www.bmfbovespa.com.br/).
+#Bovespa Tools
 
-## Introdução
-Se compararmos a bolsa de valores americana com a brasileira notaremos uma diferença gigantesca, seja pelo volume financeiro ou mesmo o número de investidores. Na verdade essa comparação nem justa é, uma vez que estaríamos comparando um país de primeiro mundo com um emergente.
+Small tools for small trades of [BM&F Bovespa](http://www.bmfbovespa.com.br/).
 
-O fato é que o número de pequenos investidores americanos, ou seja, aquele pai de família que investe uma parte da sua poupança no bolsa de valores para obter resultados melhores do que teria se deixasse seu dinheiro no banco, é muito maior que o número de investidores brasileiros. Soma-se a isso a quantidade de ferramentas disponíveis para que este pequeno investidor americano possa tomar sua decisão de compra ou venda da melhor maneira possível é muito maior e com mais qualidade dos que as dos brasileiros.
+##Introduction
 
-A primeira dificuldade do investidor brasileiro se depara é a dificuldade de achar uma base de dados confiável com todos os ativos correntes da [BM&F Bovespa](http://www.bmfbovespa.com.br/), isto é, não é fácil encontrar uma base de dados de qualidade, atualizada e gratuita. Você pode argumentar que o [Yahoo Finance](http://finance.yahoo.com/) ou ainda o [Google Finance](https://www.google.com/finance) oferecem essa opção. Sim tanto o Yahoo quanto o Google oferecem boas ferramentas para a tomada de decisão, no entanto, experimente comparar as duas bases de dados, pegue um ativo e compare seu histórico de preços entre as duas bases, você notará uma variação nos preços, algumas vezes bem importantes. Então você se pergunta por que existe essa diferença entre as duas bases: 
-> 1. [Desdobramento e agrupamentos](http://pt.wikipedia.org/wiki/Desdobramento_de_a%C3%A7%C3%B5es)
-> 2. [Proventos](http://wiki.advfn.com/pt/Proventos)
+If we compare the American Stock Exchange under the Brazilian we will notice a huge difference, either by financial volume or by the number of investors. In fact this comparison is not fair, since we are comparing a first world country with an emerging one.
 
-No entanto o problema maior é como você ter uma base de dados confiável que você possa utilizar em programas de análise técnica como o [MetaStock](http://www.metastock.com/) ou o [Metatrader](http://www.metatrader5.com/), neste ponto que as coisas começam a ficar difíceis, pois uma base atualizada e com mais de 5 anos de dados e gratuita você dificilmente encontrará e isso complicará sobremaneira sua tomada de decisões.
+The fact is that the number of small American investors, that is the householder who invest part of their savings in stocks to get better results than it would have if he left his money in the bank, is much larger than the number of Brazilian investors. Additionally, the number of tools available for this little American investor to make his decision to buy or sell in the best possible way is much bigger and with more quality than those of Brazilians investors have.
 
-##Finalidade
-Este projeto tem a intensão de fornecer essa base dados confiável e gratuita ao pequeno investidor, isto é, disponibilizar uma ferramenta que lhe permita criar essa base de acordo as suas necessidades.
+The main difficulty of the Brazilian investor faces is the difficulty of finding a reliable database with all current assets of [BM&F Bovespa](http://www.bmfbovespa.com.br/), that is, it is not easy to find a quality database, updated and free. You can argue that [Yahoo Finance](http://finance.yahoo.com/) or [Google Finance](https://www.google.com/finance) offer this option. Yes, both Yahoo and Google do offer good tools for decision making, however, try to compare the two databases, take an symbol and compare its price history between the two databases, you will notice a variation in prices, sometimes a huge one. Then you could wonder why there is this difference!?
+> 1. Stock Split and Merge
+> 2. Stock Dividends
+However the biggest problem is how to have a reliable database that you can use in technical analysis programs such as [MetaStock](http://www.metastock.com/) ou o [Metatrader](http://www.metatrader5.com/), this is where things start to get worse, because an free updated database with more than 5 years of history is not easy to find and this will negatively impact your decision making.
 
-Em um segundo momento oferecer ferramentas que o ajude na tomada de decisão, e não estou me referindo a uma ferramenta completa de análise técnica, mas sim de pequenos utilitários que executarão tarefas automatizadas como o alerta de preço de um papel via email ou SMS.
+##Goals
 
-E por fim, criar um site onde essas ferramentas serão disponibilizadas assim como um blog com os gatilhos de compra e venda de ações disparados por estas mesmas ferramentas.
+1. Provide a free and reliable Bovespa's database for the small investor, that is, provide a tool that will allows you to create this database according to your needs.
+2. Provide tools that will help you in decision making, and I'm not referring to a complete technical analysis tool, but of small utilities that will perform automated tasks as the symbol's price alert via email or SMS.
+
+Finally, in a second moment to publish a website where these tools will be available as well as a blog with stock's buys and sell triggered by these tools.
