@@ -3,9 +3,9 @@ unit usamMainForm;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.CheckLst,
-  Vcl.ExtCtrls, ubdiSplitAndMerge;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, ComCtrls, CheckLst,
+  ExtCtrls, ubdiSplitAndMerge;
 
 type
   TfsamMainForm = class(TForm)
@@ -96,11 +96,25 @@ begin
 end;
 
 procedure TfsamMainForm.ckTodosClick(Sender: TObject);
+  procedure CheckAll(State : TCheckBoxState);
+  var
+    i : integer;
+  begin
+    //retro compatibility
+    for I := 0 to clbSplitMerge.Count - 1 do
+    begin
+      if (State = cbChecked) then
+        clbSplitMerge.Checked[i] := True
+      else
+        clbSplitMerge.Checked[i] := False;
+    end;
+  end;
+
 begin
   if ckTodos.Checked then
-    clbSplitMerge.CheckAll(cbChecked, False, False)
+    CheckAll(cbChecked)
   else
-    clbSplitMerge.CheckAll(cbUnchecked, False, False);
+    CheckAll(cbUnchecked);
 end;
 
 procedure TfsamMainForm.FormCreate(Sender: TObject);
@@ -118,6 +132,7 @@ end;
 procedure TfsamMainForm.FormShow(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := 0;
+  edFile.Text := IncludeTrailingPathDelimiter(ExtractFilePath(Application.ExeName)) + 'POMO3.csv'; 
 end;
 
 procedure TfsamMainForm.OnDone(Sender: TObject);

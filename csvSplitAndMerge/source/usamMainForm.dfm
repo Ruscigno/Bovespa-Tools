@@ -137,7 +137,7 @@ object fsamMainForm: TfsamMainForm
         Font.Height = -11
         Font.Name = 'Lucida Console'
         Font.Style = []
-        ItemHeight = 13
+        ItemHeight = 11
         ParentFont = False
         TabOrder = 0
       end

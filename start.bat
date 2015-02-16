@@ -1,2 +1,2 @@
 subst z: "V:\Projetos\Delphi\BovespaTools"
-bds-settings.reg
+bds-15.0-settings.reg

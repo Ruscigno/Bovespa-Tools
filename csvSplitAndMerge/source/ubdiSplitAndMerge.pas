@@ -41,7 +41,7 @@ type
 implementation
 
 uses
-  System.SysUtils, System.Math;
+  SysUtils, Math;
 
 const
   nDATE = 0;
@@ -77,8 +77,8 @@ begin
 
   FSplitMerge.Clear;
   FnAlphaMax := FFileList.Count;
-  FnAlphaPos := 0;
-  FnBetaPos := 0;
+  FnAlphaPos := 1;
+  FnBetaPos := 1;
   for I := 0 to FFileList.Count - 1 do
   begin
     FsFileName := FFileList[i];
@@ -96,9 +96,8 @@ var
   nFator, anOpen, anClose : Real;
   sType : string;
   I: Integer;
-  nValMax, nValMin, nValOpe, nValClo : Real;
 begin
-  System.Math.SetRoundMode(rmTruncate);
+//  {$IFDEF VER280}System.{$ENDIF}Math.SetRoundMode(rmTruncate);
   anOpen  := StrToFloat(pSplit[6]);
   anClose := StrToFloat(pSplit[4]);
   nFator := Round(StrToFloat(pSplit[8]));
@@ -106,20 +105,24 @@ begin
     sType := 'S'
   else if (nFator < 1) then
   begin
-    nFator := 1 / Round(anOpen / anClose);
+    nFator := 1 / Round(anClose / anOpen);
     sType := 'M'
   end;
   FLine := TStringList.Create;
   try
     FLine.Delimiter := ';';
+  	FnBetaMax := FSymbol.Count - 1;
     for I := pnPosition to FSymbol.Count - 1 do
     begin
       FLine.DelimitedText := Trim(FSymbol[i]);
-      FLine[nOPEN] := FloatToStr(RoundTo(StrToFloat(FLine[nOPEN]) * nFator, 2));
-      FLine[nCLOS] := FloatToStr(RoundTo(StrToFloat(FLine[nCLOS]) * nFator, 2));
-      FLine[nPMAX] := FloatToStr(RoundTo(StrToFloat(FLine[nPMAX]) * nFator, 2));
-      FLine[nPMIN] := FloatToStr(RoundTo(StrToFloat(FLine[nPMIN]) * nFator, 2));
+      FLine[nOPEN] := FloatToStr(RoundTo(StrToFloat(FLine[nOPEN]) * nFator, -4));
+      FLine[nCLOS] := FloatToStr(RoundTo(StrToFloat(FLine[nCLOS]) * nFator, -4));
+      FLine[nPMAX] := FloatToStr(RoundTo(StrToFloat(FLine[nPMAX]) * nFator, -4));
+      FLine[nPMIN] := FloatToStr(RoundTo(StrToFloat(FLine[nPMIN]) * nFator, -4));
       FSymbol[i] := FLine.DelimitedText;
+  	  inc(FnBetaPos);
+      if Assigned(FOnProgress) then
+        FOnProgress(Self);
     end;
     FSymbol.SaveToFile(FsFileName);
   finally
@@ -137,9 +140,9 @@ begin
   aSplit := TStringList.Create;
   try
     aSplit.Delimiter := ':';
-    FnAlphaPos := 0;
+    FnAlphaPos := 1;
     FnAlphaMax := FSplitMerge.Count;
-    FnBetaPos := 0;
+    FnBetaPos := 1;
     for I := 0 to FnAlphaMax - 1 do
     begin
       aSplit.DelimitedText := FSplitMerge[i];
@@ -155,6 +158,9 @@ begin
             DoMergeSplit(A, aSplit);
         end;
       end;
+	  inc(FnAlphaPos);
+	  if Assigned(FOnProgress) then
+		FOnProgress(Self);
     end;
   finally
     aSplit.Free;
@@ -166,10 +172,10 @@ var
   sAdd : string;
   i : Integer;
 //  nValMax, nValMin, nGapMax, nGapMin : Real;
-  nLValClo, nValOpe, nValClo : Real;
-//  nLValOpe, nLValMax, nLValMin : Real;
+  nLValOpe, nLValClo, nValOpe, nValClo : Real;
+//  nLValMax, nLValMin : Real;
 begin
-  FormatSettings.DecimalSeparator := '.';
+  {$IFDEF VER280}FormatSettings.{$ENDIF}DecimalSeparator := '.';
   if not Assigned(FSymbol) then
     FSymbol := TStringList.Create;
   if not Assigned(FLast) then
@@ -197,13 +203,13 @@ begin
       begin
 //        nGapMax := nValOpe * 1.8; //80% de GAP
 //        nGapMin := nValOpe * 0.6; //40% de GAP
-//        nLValOpe := StrToFloat(FLast[nOPEN]);
+        nLValOpe := StrToFloat(FLast[nOPEN]);
         nLValClo := StrToFloat(FLast[nCLOS]);
 //        nLValMax := StrToFloat(FLast[nPMAX]);
 //        nLValMin := StrToFloat(FLast[nPMIN]);
         sAdd := FsSymbol + ':' + FLine[nDATE] +
-        ':Close: ' + FloatToStr(nLValClo) +
-        ':Open:' + FloatToStr(nValOpe) +
+        ':Close: ' + FloatToStr(nValClo) +
+        ':Open:' + FloatToStr(nLValOpe) +
         ':Fator:' + FloatToStr(RoundTo(nLValClo / nValOpe, -2)) +
         ':File:' + FsFileName;
         if (nLValClo / nValOpe <= 0.5) then //Merge

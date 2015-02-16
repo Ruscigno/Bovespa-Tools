@@ -1,0 +1,46 @@
+# IDE files
+*.~*~
+*.local
+*.identcache
+__history
+
+# Delphi Compiler output files
+*.drc
+*.map
+*.jdbg
+*.tds
+*.exe
+*.dll
+*.bpl
+*.dcu
+*.dcp
+
+# C++ Builder Compiler output files
+*.bpi
+*.obj
+*.lib
+*.hpp
+*.i
+*.il?
+*.#??
+*.pbi
+
+# 64bit Delphi/C++Builder files
+*.[ao]
+
+# Other files
+*.csv
+*.zip
+
+# Lib directories
+lib/*
+3rdParty/lib/*
+
+# Lib directories
+bin/*
+3rdParty/bin/*
+
+# Third party
+3rdParty/SuperEstruturas/general/*
+3rdParty/SuperEstruturas/class/*
+Gerenciador de Projetos/*
