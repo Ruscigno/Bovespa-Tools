@@ -1,0 +1,1 @@
+subst z: "V:\Projetos\Delphi\BovespaTools"

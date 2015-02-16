@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/02/14 22:15:16.000.863,=C:\Users\Sander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/02/14 22:17:40.000.198,Z:\csvSplitAndMerge\source\usamMainForm.dfm=C:\Users\Sander\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2015/02/14 22:17:40.000.198,Z:\csvSplitAndMerge\source\usamMainForm.pas=C:\Users\Sander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/02/14 22:18:53.000.400,Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj=C:\Users\Sander\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2015/02/14 22:43:36.000.426,=Z:\csvSplitAndMerge\source\Unit1.pas</Transaction>
+    <Transaction>2015/02/14 22:44:12.000.891,Z:\csvSplitAndMerge\source\ubdiSplitAndMerge.pas=Z:\csvSplitAndMerge\source\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

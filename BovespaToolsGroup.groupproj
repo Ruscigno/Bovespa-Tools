@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{73CF1592-B620-40C5-9004-1B978AE23531}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Z:\BDI-Conversor\source\BDIConversor.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="csvSplitAndMerge">
+        <MSBuild Projects="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj"/>
+    </Target>
+    <Target Name="csvSplitAndMerge:Clean">
+        <MSBuild Projects="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="csvSplitAndMerge:Make">
+        <MSBuild Projects="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BDIConversor">
+        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj"/>
+    </Target>
+    <Target Name="BDIConversor:Clean">
+        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BDIConversor:Make">
+        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="csvSplitAndMerge;BDIConversor"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="csvSplitAndMerge:Clean;BDIConversor:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="csvSplitAndMerge:Make;BDIConversor:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
