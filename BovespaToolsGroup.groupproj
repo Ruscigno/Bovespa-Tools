@@ -6,7 +6,7 @@
         <Projects Include="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Z:\BDI-Conversor\source\BDIConversor.dproj">
+        <Projects Include="Z:\BDI-Conversor\source\d21\BDIConversor.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,13 +27,13 @@
         <MSBuild Projects="Z:\csvSplitAndMerge\source\csvSplitAndMerge.dproj" Targets="Make"/>
     </Target>
     <Target Name="BDIConversor">
-        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj"/>
+        <MSBuild Projects="Z:\BDI-Conversor\source\d21\BDIConversor.dproj"/>
     </Target>
     <Target Name="BDIConversor:Clean">
-        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj" Targets="Clean"/>
+        <MSBuild Projects="Z:\BDI-Conversor\source\d21\BDIConversor.dproj" Targets="Clean"/>
     </Target>
     <Target Name="BDIConversor:Make">
-        <MSBuild Projects="Z:\BDI-Conversor\source\BDIConversor.dproj" Targets="Make"/>
+        <MSBuild Projects="Z:\BDI-Conversor\source\d21\BDIConversor.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="csvSplitAndMerge;BDIConversor"/>

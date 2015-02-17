@@ -126,6 +126,10 @@ object fsamMainForm: TfsamMainForm
     object tsResultado: TTabSheet
       Caption = 'Resultado'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object clbSplitMerge: TCheckListBox
         Left = 0
         Top = 17
