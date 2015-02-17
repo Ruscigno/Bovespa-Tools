@@ -132,7 +132,7 @@ end;
 procedure TfsamMainForm.FormShow(Sender: TObject);
 begin
   PageControl1.ActivePageIndex := 0;
-  edFile.Text := IncludeTrailingPathDelimiter(ExtractFilePath(Application.ExeName)) + 'POMO3.csv'; 
+  edFile.Text := IncludeTrailingPathDelimiter(ExtractFilePath(Application.ExeName)) + 'XTED11.csv';
 end;
 
 procedure TfsamMainForm.OnDone(Sender: TObject);

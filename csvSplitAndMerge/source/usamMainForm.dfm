@@ -126,10 +126,6 @@ object fsamMainForm: TfsamMainForm
     object tsResultado: TTabSheet
       Caption = 'Resultado'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object clbSplitMerge: TCheckListBox
         Left = 0
         Top = 17
@@ -141,7 +137,7 @@ object fsamMainForm: TfsamMainForm
         Font.Height = -11
         Font.Name = 'Lucida Console'
         Font.Style = []
-        ItemHeight = 11
+        ItemHeight = 13
         ParentFont = False
         TabOrder = 0
       end
