@@ -4,7 +4,7 @@ interface
 
 uses
   ubdiParser, Vcl.Forms, Vcl.Controls, Vcl.StdCtrls, Vcl.ComCtrls,
-  System.Classes;
+  System.Classes, Vcl.Dialogs;
 
 type
   TfbdiMain = class(TForm)
@@ -16,9 +16,12 @@ type
     btAdicionar: TButton;
     btLimpar: TButton;
     pbTotal: TProgressBar;
+    Button1: TButton;
+    OpenDialog1: TOpenDialog;
     procedure btParserClick(Sender: TObject);
     procedure btLimparClick(Sender: TObject);
     procedure btAdicionarClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     bdi : TbdiParser;
@@ -52,6 +55,19 @@ begin
       bdi.Free;
     end;
     pbTotal.StepIt;
+  end;
+end;
+
+procedure TfbdiMain.Button1Click(Sender: TObject);
+begin
+  if (OpenDialog1.Execute) then
+  begin
+    bdi := TbdiParser.Create('');
+    try
+      bdi.DeleteInvalidFiles(OpenDialog1.Files);
+    finally
+      bdi.Free;
+    end;
   end;
 end;
 

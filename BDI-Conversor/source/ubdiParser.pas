@@ -24,6 +24,7 @@ type
   public
     constructor Create(psFile : string);
     procedure Parser;
+    procedure DeleteInvalidFiles(pFileList : TStrings);
     property ProgMax : Integer read FnProgMax write FnProgMax;
     property OnProgress : TNotifyEvent read FOnProgress write FOnProgress;
     property InverseOrder : Boolean read FbInverseOrder write FbInverseOrder;
@@ -70,6 +71,30 @@ begin
   finally
     FLines.Free;
     FEmpresa.Free;
+  end;
+end;
+
+procedure TbdiParser.DeleteInvalidFiles(pFileList: TStrings);
+var
+  I: Integer;
+  aFile : TStringList;
+begin
+  aFile := TStringList.Create;
+  try
+    for I := 0 to pFileList.Count - 1 do
+    begin
+      aFile.LoadFromFile(pFileList[I]);
+      if (aFile.Count > 0) then
+      begin
+        FnData := StrToDate(Trim(Copy(aFile[0], 1, 10)));
+        if (Now - 30 > FnData) then
+          DeleteFile(pFileList[I]);
+      end
+      else
+        DeleteFile(pFileList[I]);
+    end;
+  finally
+    aFile.Free;
   end;
 end;
 

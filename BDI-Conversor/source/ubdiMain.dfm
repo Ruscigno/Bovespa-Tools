@@ -52,7 +52,6 @@ object fbdiMain: TfbdiMain
     Align = alBottom
     Step = 1
     TabOrder = 2
-    ExplicitWidth = 348
   end
   object lbArquivos: TListBox
     Left = 8
@@ -95,6 +94,20 @@ object fbdiMain: TfbdiMain
     Align = alBottom
     Step = 1
     TabOrder = 6
-    ExplicitWidth = 348
+  end
+  object Button1: TButton
+    Left = 224
+    Top = 304
+    Width = 108
+    Height = 25
+    Caption = 'Apagar inv'#225'lidas'
+    TabOrder = 7
+    OnClick = Button1Click
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'CSV Files|*.csv'
+    Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
+    Left = 160
+    Top = 184
   end
 end
